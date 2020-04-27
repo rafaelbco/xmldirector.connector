@@ -17,7 +17,12 @@ from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import setRoles
 from plone.app.testing import login
-from plone.testing import zope
+
+try:
+    from plone.testing import zope
+except ImportError:
+    from plone.testing import z2 as zope
+
 from plone.registry.interfaces import IRegistry
 
 from zope.component import getUtility
